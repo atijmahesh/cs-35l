@@ -1,0 +1,19 @@
+1) Board Componen Modifications
+- Introduced the concept of `selectedSquares`, managed through an array mapped to `selectedSquares` and `setSelectedSquares` states. This array tracked the squares selected by the player.
+- Created two new functions: `place()` for placing a square and `move()` for moving a square. These functions updated the `nextSquares` array based on user actions and positions.
+- Overhauled the `handleClick` function to handle complex user interactions. Introduced multiple conditionals to address different scenarios.
+- Added validations for non-null squares and user move counts, ensuring players couldn't place more squares than allowed.
+- Implemented checks for adjacency and the presence of a square in the middle. If these conditions failed, the `selectedSquare` was reset to null.
+- Introduced an `adjacent` function to cross-compare and validate adjacency in squares.
+- Added a second status line in the Board component to display the `selectedSquare` for user clarity.
+
+3) Game Component Modifications
+- Reverted to storing `xIsNext` inside a `useState` variable, eliminating the need for history tracking.
+- Utilized four `useState` variables: `xIsNext` to track the current player, `squares` to manage the game board, and `xMoveCounter` and `oMoveCounter` to keep count of X and O moves, respectively.
+- Simplified the `handlePlay` function, focusing primarily on incrementing move counters without the complexity of managing history.
+- Introduced a `clear` function to reset the game board and user move counts.
+- Created a `reset` function utilizing the `clear` function and incorporated a button in the UI for user-initiated resets.
+
+4) Testing and UI Refinement:
+- Conducted extensive testing, identifying and rectifying errors, many of which were related to spelling and grammar inconsistencies.
+- Refactored the UI display to improve readability and aesthetics, spacing elements for a more user-friendly interface.

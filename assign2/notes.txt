@@ -1,0 +1,21 @@
+﻿2.1)
+1. C-h k C-h k opens up a description in the help buffer of the C-h k binding. This is because the original command triggers describe-key, which will describe the next command you type. 
+2. C-h k M-SPC opens up a description in the help buffer of the M-SPC command. The M-SPC command deletes all whitespace (spaces and tabs) around the invoked point, leaving one space left. 
+Homework 2)
+1) When invoked on /dev/null, an error appears (IndexError: list index out of range) since there aren’t lines for the program to process. 
+2) With Python 2, the script has no errors and outputs a random line from the file. In Python 3, there is an error since there is an invalid syntax. 
+3) shuf.py works with both Python2 and Python3
+4)
+Predating Python 3.11 (/usr/bin/python3):
+Median User+Sys: 0.567s
+Post Python 3.11 (/usr/local/cs/bin/python3):
+Median User+Sys: 0.402s
+Benchmark Coreutils shuf using /usr/local/cs/bin/shuf:
+Median User+Sys: 0.075s
+Upon conducting the benchmarks, we observed notable differences in the median user+sys times. For our custom Python implementation, the results demonstrated a remarkable enhancement post-Python 3.11. The median user+sys time decreased from 0.567s to 0.402s, indicating a substantial improvement in execution efficiency. Meanwhile, the system's pre-Python 3.11 version maintained a consistent median user+sys time of 0.567s, emphasizing the positive impact of the Python upgrade on our custom implementation's speed.
+
+
+Additionally, when comparing Python-based solutions with Coreutils' shuf tool, it became evident that Coreutils exhibited superior performance. The shuf tool consistently outperformed both the pre and post-Python 3.11 versions, registering a median user+sys time of 0.075s. This benchmark underscored the efficiency of Coreutils' implementation for this specific task, offering a competitive advantage over Python-based solutions.
+
+
+In summary, the benchmarks reaffirm the significance of Python 3.11's improvements, showcasing tangible speed enhancements in our custom implementation. However, Coreutils' shuf emerged as the most efficient tool for the given task.

@@ -1,0 +1,18 @@
+1.5
+1. Using the command which [command], the sh is located in /usr/bin/, sleep is located in /usr/local/cs/bin/, and type is located in /usr/bin.
+2. Using the command ls /usr/bin/se?, the sed and seq commands fit the description. Using the man command, sed stands for stream editor, a text editor that performs basic text transformations on an input stream. Meanwhile, seq is used to print a sequence of numbers. 
+3. Using the command readlink -f, the file that is executed is usr/local/cs/emacs-29.1/bin/emacs-29.1.
+4. Using the --version command at the end of the path name, the version number is 8.5.0. The plain gcc is version 13.2. Using which gcc, the plain gcc is located in a different directory, with it being located in /usr/local/cs/bin/gcc. Additionally, multiple versions of gcc may exist on a Linux platform for older compatibility use cases.
+5. Using man chmod, s: set user ID upon execution 'u + sx' sets user ID upon execution and grants the user execution permission. 'o-w' means it's revoking write permissions from others.
+6. Using the find /usr/local/cs -type d -newer /usr/local/cs/lib -print | sort command, Values returned:
+/usr/local/cs
+/usr/local/cs/bin
+/usr/local/cs/bin/.del
+/usr/local/cs/coreutils-9.4
+/usr/local/cs/coreutils-9.4/bin
+7. Using the command: find /usr/local/cs/src/python/Python-* -type f | wc -l, the output was 4457 regular files. 
+8. Using the command: find /usr/local/cs/bin -type l | wc -l, there are 373 symbolic links in the directory. 
+9. First using the command cd /usr/lib64 to navigate to the directory, then using ls -alt to list all the files including the hidden files and sorted by time. The oldest file is libbz2.so.1.0.6.
+10. First navigating to emacs (with command emacs), to search for a command, type M-x apropos-command RET. Searching for commands with transpose in their name, the commands are transpose-chars, transpose-lines, transpose-paragraphs, transpose-regions, transpose-sentences, transpose-sexps, transpose-words.
+11. The yank function pastes the most recently killed/copied text at the current cursor position. It can be invoked with C-y.
+12. Using the command ps -ejH, I can see my shell's process, ancestors, and descendents. -e selects all processes, -j formats the output in job format, and -H shows the process hirearchy (including ancestors and descendents). 

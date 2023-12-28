@@ -1,0 +1,44 @@
+1) Downloaded tarball, move it to SeasNet sever, unzipped it (results in .git file),
+run git clone .git randall
+2) Added check function in make file which calles test.sh script
+3) Seperate out program into options, output, hardware, and software.
+Creating all necessary c and header files
+4) Modify Makefile to compile all .c and .o files instead of just one
+5) testing make. run into a few issues using static methods.
+removed static keyword from said methods
+6) Adding options. Adding a switch statement to randall.c that parses options,
+storing input and output
+options into variables and delivering error messages for invalid options
+COMMITTED HERE
+
+7) Finished randall.c switch statement and conditional logic for proper outputs
+8) Debugging some missing functions and repeatedly testing make
+COMMITTED HERE
+
+9) Turning mrands into lrands, more testing with make and make check
+COMMITTED HERE
+
+time dd if=/dev/urandom ibs=8192 obs=8192 count=16384 >/dev/null
+Timing tests:
+16384+0 records in
+16384+0 records out
+134217728 bytes (134 MB, 128 MiB) copied, 0.911467 s, 147 MB/s
+
+real	0m0.942s
+user	0m0.015s
+sys	0m0.903s
+
+time ./randall 133562368 >/dev/null
+real	0m3.158s
+user	0m3.113s
+sys	0m0.012s
+
+time ./randall 133562368 | cat >/dev/null
+real	0m3.329s
+user	0m3.168s
+sys	0m0.290s
+
+time ./randall 133562368 >rand.data
+real	0m3.329s
+user	0m3.168s
+sys	0m0.290s

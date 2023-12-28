@@ -1,0 +1,19 @@
+1) Started off by moving the folder with the tic-tac-toe assets from the react.dev website 
+into VSCode
+2) Started npm run (to connect it to browser)
+3) Copied 9 sqaures in a grid fashion using board-row div
+4) Generalized Square class to make it easily copyable and generalized with indexes
+5) Added handleClick function in Square which onClick variable
+6) Added interactive checkbox functionality with useState in Square
+7) Reworked Board function to use an array of sqaures to track state internally within Board
+8) Implemented onSquareClick functionality which updates Board and Square, Board handles all state management
+9) Added isXNext function to track who's turn it is within Board
+10) Implemented calculateWinner function and added it to board to determine what to display
+11) Switched default function to new Game function to implement history tracking and time travel
+12) Reworked Board function to reduce redundancies and to streamline inputs through Game function. Specifcially moved onClick updates and
+history tracking in Game function.
+13) Adding arrays to Game function to track player move and history
+14) Mapping History to a new variable moves to track and display moves and resolving key error by labeling list with {move}
+15) Added array to track Current Move, which is used in jumpTo function to enable time travel
+16) Updating handlePlay squares to enable history tracking + time travel
+17) Removing redundancies in xIsNext to avoid repetition within Game function

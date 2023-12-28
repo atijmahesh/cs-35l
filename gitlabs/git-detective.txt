@@ -1,0 +1,21 @@
+The first command I used was to output all instances of git merge-tree in read-only repositories. Command:
+git log --grep="git merge-tree" --grep="read-only repositories"
+
+Once I did that, I looked through commits to find when the segfault was fixed.
+The issue of "git merge-tree" causing a segfault in read-only repositories was fixed by the following commits:
+
+1. Commit ID: bcf22f29df87f25582de0ac9274d1567fa16be6f
+   Author: Junio C Hamano <gitster@pobox.com>
+   Date: Tue Oct 25 17:11:34 2022 -0700
+   Description: Merge branch 'js/merge-ort-in-read-only-repo' into maint-2.38
+   Changes:
+   - merge-ort: return early when failing to write a blob
+   - merge-ort: fix segmentation fault in read-only repositories
+
+2. Commit ID: 19118cb8570e499e1a56e81740cee3d1c1206b44
+   Author: Junio C Hamano <gitster@pobox.com>
+   Date: Mon Oct 10 10:08:43 2022 -0700
+   Description: Merge branch 'js/merge-ort-in-read-only-repo'
+   Changes:
+   - merge-ort: return early when failing to write a blob
+   - merge-ort: fix segmentation fault in read-only repositories

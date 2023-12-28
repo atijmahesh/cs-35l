@@ -1,0 +1,28 @@
+The first command I used was
+git grep "Even newspaper reports present contradictory information" -- '*'
+This command searched all the files in the repo for the above string. The output of that showed me that string was in file northamerica
+and written on line 900. 
+After that I ran the command:
+git blame -L 895,905 northamerica
+With the output of this, I found which commit affected line 900. The shorthand was c8f960ec7. To investigate it further I ran the command:
+git show c8f960ec7
+This finally outputted the culprit of the commit and the date of it
+commit c8f960ec72312d0d4368fc025a57812d8f8021f2
+Author: Paul Eggert <eggert@cs.ucla.edu>
+Date:   Mon Sep 2 08:09:06 2013 -0700
+        
+The first command I used was
+git grep "Even newspaper reports present contradictory information" -- '*'
+This command searched all the files in the repo for the above string. The output of that showed me that string was in file northamerica
+and written on line 900. 
+After that I ran the command:
+git blame -L 895,905 northamerica
+With the output of this, I found which commit affected line 900. The shorthand was c8f960ec7. To investigate it further I ran the command:
+git show c8f960ec7
+This finally outputted the culprit of the commit and the date of it
+commit c8f960ec72312d0d4368fc025a57812d8f8021f2
+Author: Paul Eggert <eggert@cs.ucla.edu>
+Date:   Mon Sep 2 08:09:06 2013 -0700
+        
+Alas, the conclusion is the Paul Eggert made these changes on a committ from
+Sep 2 2013.

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+./makedict < linux.words > my.words
+
+file="my.words"
+
+if [ -e "$file" ]; then
+    while read -r wrd; do
+        if ! grep -q "^$wrd$" "$file"; then
+            wrd1=$(echo "$wrd" | tr -cs 'A-Za-z' '[\n*]' | sort -u )
+
+            IFS=$'\n'
+            for line in $(echo "$wrd1" | tr -cs 'A-Za-z' '\n'); do
+                if ! grep -q "^$line$" "$file"; then
+                    echo "$wrd"
+                fi
+            done
+        fi
+
+        if [ -z "$wrd" ]; then
+            exit 0
+        fi
+    done
+else
+    echo "File $file not found"
+fi
